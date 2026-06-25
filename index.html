@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0B0B0B" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<title>Quintaliana · Rodízio Counter</title>
+<title>Rodízio Murchas</title>
 <style>
 /* ============================================
    BOCAS MURCHAS — GAMER UNDERGROUND THEME
@@ -189,9 +189,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <section id="screen-login" class="screen active">
     <div class="login-wrap">
       <div class="hero">
-        <div class="logo title-acid">Quintaliana</div>
-        <div class="sub">Rodízio Counter</div>
-        <div class="resto">🍝 Casa Mia · contador de massas</div>
+        <div class="logo title-acid">Rodízio Murchas</div>
+        <div class="sub">Bocas Murchas</div>
+        <div class="resto">🍝 Quintaliana · Casa Mia</div>
       </div>
 
       <div class="mesa-box" id="mesa-box">
@@ -221,7 +221,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <!-- ============ MENU ============ -->
   <section id="screen-menu" class="screen">
     <header class="topbar">
-      <div class="brand"><b class="text-acid">QUINTALIANA</b><small><span class="live-dot" id="dot-menu"></span><span id="mode-menu">mesa</span></small></div>
+      <div class="brand"><b class="text-acid">RODÍZIO MURCHAS</b><small><span class="live-dot" id="dot-menu"></span><span id="mode-menu">mesa</span></small></div>
       <div class="spacer"></div>
       <button class="who" id="who-btn"><span class="av" id="who-av">🙂</span><b id="who-name">você</b></button>
       <button class="iconbtn" id="open-sheet">⋯</button>
@@ -511,7 +511,7 @@ function renderPlacar(){
 function shareText(){
   const ranked=[...state.users].map(u=>({u,t:userTotal(u.id)})).filter(r=>r.t>0).sort((a,b)=>b.t-a.t);
   if(!ranked.length) return "Ninguém comeu nada ainda 😅";
-  let s="🍝 QUINTALIANA — Placar do rodízio"+(LIVE?" (mesa "+room+")":"")+"\n\n";
+  let s="🍝 RODÍZIO MURCHAS — Placar"+(LIVE?" (mesa "+room+")":"")+"\n\n";
   const medals=["🥇","🥈","🥉"];
   ranked.forEach((r,i)=>{ s+=`${medals[i]||(i+1)+"."} ${r.u.emoji} ${r.u.name} — ${r.t} itens\n`; });
   s+=`\nTotal da mesa: ${ranked.reduce((a,r)=>a+r.t,0)} itens 🔥`;
@@ -519,7 +519,7 @@ function shareText(){
 }
 async function doShare(){
   const txt=shareText();
-  if(navigator.share){ try{ await navigator.share({title:"Placar Quintaliana",text:txt}); return; }catch(e){} }
+  if(navigator.share){ try{ await navigator.share({title:"Placar Rodízio Murchas",text:txt}); return; }catch(e){} }
   try{ await navigator.clipboard.writeText(txt); toast("Placar copiado ✓"); }catch(e){ alert(txt); }
 }
 
